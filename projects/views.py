@@ -1,4 +1,5 @@
 from os import stat
+from django.http.response import Http404
 from django.shortcuts import render
 from rest_framework import serializers, status
 from rest_framework.views import APIView
@@ -25,14 +26,20 @@ class ProjectsAPI(APIView):
             return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
         
 class ProfileAPI(APIView):
-    def get_profile(self, request, format=None):
-        found_profile =  Profile.objects.filter(request.user_id).first()
-        serializers = ProfileSerialier(found_profile, many=False)
-        if serializers.is_valid():
+    def profile_getter(self, user_id):
+        try:
+            return Profile.objects.filter(user=user_id).first()
             return Response(serializers.data, status=status.HTTP_200_OK)
-
-        else:
-            return Response(serializers.data, status=status.HTTP_404_NOT_FOUND)
+        
+        except Profile.DoesNotExist:
+                return Http404
+            
+        
+    def get_profile(self, request, user_id, format=None): 
+        profile = self.profile_getter(user_id)
+        serializers = ProfileSerialier(profile)
+        
+        return Response(serializers.data)
         
     def create_new_profile(self, request, format=None):
         serializers = ProfileSerialier(data=request.data)
