@@ -4,12 +4,16 @@ from django.shortcuts import render
 from rest_framework import serializers, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Profile, Project
 
+from .models import Profile, Project
 from .serializer import ProjectSerializer, ProfileSerialier
-from projects import serializer 
+from projects import serializer
+from .permissions import IsAdminOrReadOnly 
 # Create your views here.
 class ProjectsAPI(APIView):
+    
+    permission_classes = (IsAdminOrReadOnly,)
+    
     def project_getter(self, id):
         try:
             return Project.object.filter(id = id).first()
@@ -41,6 +45,7 @@ class ProjectsAPI(APIView):
          
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
     
+    permission_classes = (IsAdminOrReadOnly,)
     
     def update_existing_project(self, request, project_id, format=None):
         fetched_project = self.project_getter(project_id)
