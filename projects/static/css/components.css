@@ -1,0 +1,336 @@
+/* global image styling */
+
+.post-image {
+  border-radius: 20px;
+  object-fit: cover;
+  border: 0;
+}
+
+.avatar-image {
+  border-radius: 100%;
+  object-fit: cover;
+  border: 0;
+}
+
+.icon-image {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  margin: auto 10px;
+}
+
+/* global button styling */
+
+.button {
+  border-radius: 10px;
+  padding: 6px;
+}
+
+/* Sidebar nav items styling*/
+
+.sidebar-header {
+  height: 20%;
+  width: 100%;
+}
+
+#large-view {
+  display: block;
+}
+
+#close-sidebar {
+  width: 100%;
+  text-align: end;
+  padding: 30px;
+}
+
+#open-sidebar {
+  width: max-content;
+  height: fit-content;
+  text-align: start;
+  margin: auto;
+  padding: 10px;
+}
+
+#close-sidebar i {
+  display: none;
+}
+
+.small-view {
+  display: none;
+}
+
+.sidebar-links {
+  list-style-type: none;
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 30px;
+}
+
+.sidebar-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 65%;
+  height: max-content;
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+.sidebar-item p {
+  width: fit-content;
+}
+
+/* global inputs styling */
+
+.mini-form {
+  display: flex;
+  flex-flow: row nowrap;
+  width: fit-content;
+  height: min-content;
+  margin: auto 0;
+}
+
+.mini-form-input {
+  border-radius: 10px 0 0 10px;
+  padding: 10px;
+}
+
+.mini-form-button {
+  border-radius: 0 10px 10px 0;
+  padding: 10px;
+}
+
+.full-form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  border-radius: 20px;
+  width: 80%;
+}
+
+.full-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: max-content;
+  width: 100%;
+  margin: 0 30px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.full-form-group {
+  display: flex;
+  width: 100%;
+  margin: 10px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  text-align: start;
+}
+
+.full-form-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.full-form-button {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* feed grid item */
+
+.feed-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 10px 20px;
+}
+
+.feed-item-image {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.feed-item-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: max-content;
+  margin: 20px 0;
+}
+
+.feed-user-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  width: fit-content;
+  height: max-content;
+}
+
+.feed-avatar {
+  width: 50px;
+  height: 50px;
+  margin: auto 10px;
+}
+
+.feed-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: fit-content;
+}
+
+.feed-username {
+  margin: 0 5px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.feed-rating {
+  width: 100%;
+  margin: 0 20px;
+  margin-bottom: 5px;
+}
+
+/* profile page */
+.profile-avatar-container {
+  grid: avatar;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 50%;
+  margin: 0;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+
+  object-fit: cover;
+}
+
+.profile-details-container {
+  grid-area: details;
+
+  height: fit-content;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.profile-details-item {
+  margin: 0;
+}
+
+.profile-bio-container {
+  grid-area: bio;
+
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+
+  height: 50%;
+  width: 100%;
+}
+
+.profile-post {
+  width: 250px;
+  height: 250px;
+
+  object-fit: cover;
+  margin: 10px 20px;
+}
+
+/* view project page */
+
+.view-image {
+  width: 80%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.view-post-details {
+  width: 80%;
+  height: fit-content;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  margin: auto;
+}
+.view-user-details {
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.view-user-avatar {
+  width: 75px;
+  height: 75px;
+}
+
+.view-user-info {
+  width: fit-content;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-post-form {
+  width: fit-content;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0;
+}
+
+.view-description-container {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}

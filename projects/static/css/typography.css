@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.title-black {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.title-bold {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.title-regular {
+  font-size: 32px;
+}
+
+.heading-black {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.heading-bold {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.heading-regular {
+  font-size: 28px;
+}
+
+.subheading-black {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.subheading-bold {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.subheading-regular {
+  font-size: 24px;
+}
+
+.body-xl-black {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.body-xl-bold {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.body-xl-regular {
+  font-size: 18px;
+}
+
+.body-lg-black {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.body-lg-bold {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.body-lg-regular {
+  font-size: 16px;
+}
+
+.body-black {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.body-bold {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.body-regular {
+  font-size: 14px;
+}
+
+.body-sm-black {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.body-sm-bold {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.body-sm-regular {
+  font-size: 12px;
+}
