@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+<!-- start of content block -->
+{% block content %}
+<div class="view-container">
+  <img src="{{project.image.url}}" alt="" class="post-image view-image" />
+  <div class="view-post-details">
+    <div class="view-user-details">
+      <img
+        src="{{project.profile.profile_image.url}}"
+        alt=""
+        class="view-user-avatar avatar-image"
+      />
+      <div class="view-user-info">
+        <p class="body-black primary-text text-start">
+          {{project.profile.user.username}}
+        </p>
+        <a
+          href="{{project.live_link}}"
+          target="_blank"
+          class="body-sm-bold primary-text link-plain"
+          >{{project.live_link}}</a
+        >
+      </div>
+    </div>
+    <div class="view-post-form">
+      <form action="{% url 'Rate' %}" class="mini-form">
+        <select
+          class="mini-form-input border-light text-secondary background-light"
+        >
+          <option>Rate this project</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <button class="mini-form-button border-light background-light">
+          <i class="fas fa-tachometer-alt text-secondary"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="view-description-container">
+    <p class="text-primary body-regular text-center">{{project.description}}</p>
+  </div>
+</div>
+
+{% endblock content %}

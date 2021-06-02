@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<!-- start of content block -->
+{% block content %}
+<!-- start of if block -->
+{% if projects %}
+<!-- start of for loop -->
+{% for project in projects %}
+<div class="feed-item">
+  <img src="{{project.image.url}}" alt="" class="post-image feed-item-image" />
+  <div class="feed-item-details">
+    <div class="feed-user-details">
+      <img
+        src="{{project.profile.profile_picture}}"
+        alt=""
+        class="feed-avatar avatar-image"
+      />
+
+      <div class="feed-details">
+        <p class="body-sm-black text-start text-primary feed-username">
+          {{project.profile.username}}
+        </p>
+        <p class="body-sm-regular text-start text-primary feed-rating">
+          <i class="fab fa-gripfire text-red body-regular"></i>
+          {{project.rating}}
+        </p>
+      </div>
+    </div>
+    <a
+      href="/project/view/{{project.id}}"
+      class="link-primary button body-sm-bold"
+      >View</a
+    >
+  </div>
+</div>
+{% endfor %} {% else %}
+<p class="text-center subheading-bold text-primary">
+  There are no projects posted
+</p>
+{% endif %} {% endblock content %}

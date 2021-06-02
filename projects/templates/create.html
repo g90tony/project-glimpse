@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+<!-- start of content block -->
+{% block content %}
+<div class="full-form-container background-light">
+  <form action="{% url 'Create' %}" method="POST" class="full-form">
+    <p class="body-lg-bold text-start text-primary">
+      Share a glimpse of what you are working on
+    </p>
+
+    <div class="full-form-group">
+      <label class="secondary-text text-start body-sm-black" for=""
+        >Project Name</label
+      >
+      <input
+        type="text"
+        class="border-primary body-sm-regular background-white full-form-input"
+        placeholder="Enter project name"
+      />
+    </div>
+    <div class="full-form-group">
+      <label class="secondary-text text-start body-sm-black" for=""
+        >Project Lading Page</label
+      >
+      <input
+        type="file"
+        accept="image/*"
+        class="border-primary body-sm-regular background-white full-form-input"
+      />
+    </div>
+    <div class="full-form-group">
+      <label class="secondary-text text-start body-sm-black" for=""
+        >Project Live Link</label
+      >
+      <input
+        type="text"
+        class="border-primary body-sm-regular background-white full-form-input"
+        placeholder="Enter project's live url"
+      />
+    </div>
+    <div class="full-form-group">
+      <label class="secondary-text text-start body-black" for=""
+        >Project Description</label
+      >
+      <textarea
+        type="text"
+        class="border-primary body-sm-regular background-white full-form-input"
+        placeholder="Enter detailed project description..."
+      ></textarea>
+    </div>
+    <button
+      class="
+        full-form-button
+        border-primary
+        background-primary
+        text-white
+        body-sm-bold
+        button
+      "
+    >
+      Post
+    </button>
+  </form>
+</div>
+{% endblock content %}

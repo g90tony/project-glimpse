@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Glimpse Prototype</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/components.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/typography.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/media-queries.css' %}" />
+  </head>
+  <body>
+    <div class="root-container">
+      <div id="sidebar" class="sidebar-container background-light">
+        <button
+          id="close-sidebar"
+          class="button text-primary background-light border-light"
+        >
+          <i class="fas fa-times title-regular text-primary text-end"></i>
+        </button>
+        <div class="sidebar-links">
+          <a href="index.html" class="sidebar-item link-plain">
+            <img src="images/sidebar/feed.png" alt="" class="icon-image" />
+            <p class="body-lg-black text-primary text-start">Feed</p></a
+          >
+
+          <a href="profile.html" class="sidebar-item link-plain">
+            <img src="images/sidebar/profile.png" alt="" class="icon-image" />
+            <p class="body-lg-black text-primary text-start">Profile</p></a
+          >
+
+          <a href="create.html" class="sidebar-item link-plain">
+            <img src="images/sidebar/add.png" alt="" class="icon-image" />
+            <p class="body-lg-black text-primary text-start">Add Post</p></a
+          >
+        </div>
+      </div>
+
+      <div class="search-container">
+        <p id="large-view" class="subheading-black text-primary text-center">
+          Project Glimpse.
+        </p>
+        <div class="small-view">
+          <button id="open-sidebar" class="button link-light text-primary">
+            <i class="fas fa-bars body-regular"></i>
+          </button>
+          <p class="subheading-black text-primary text-center">
+            Project Glimpse.
+          </p>
+        </div>
+        <form action="" class="mini-form">
+          <input
+            type="text"
+            class="mini-form-input border-light background-light"
+            placeholder="Search projects here..."
+          />
+          <button
+            class="
+              mini-form-button
+              button
+              border-light
+              background-light
+              text-white
+            "
+          >
+            <i class="fas fa-search text-secondary"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="heading-container">
+        <p class="body-xl-black text-primary text-start">Feed</p>
+      </div>
+
+      <div class="content-container">
+        {% block content %}
+        <!-- content will appear here -->
+        {% endblock content %}
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/sidebar.js' %}"></script>
+  </body>
+</html>
