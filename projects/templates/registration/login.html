@@ -1,0 +1,28 @@
+{% extends "django_registration/base.html" %}
+
+<!-- load bootstrap -->
+{% load bootstrap4 %} {% block content %}
+
+<div class="auth-form-container justify-content-center">
+  {% if form.errors %}
+  <p>Password or Username is incorrect</p>
+  {% endif %}
+
+  <form class="auth-form" action="/accounts/login/" method="post">
+    <p class="auth-form-header">Welcome to Project Glimpse</p>
+    <p class="auth-form-body">Login to continue:</p>
+    {% csrf_token %} {% bootstrap_form form %}
+    <input type="submit" class="submit-button" value="Login" />
+    <p class="mx-auto auth-link">
+      If you don't have an account,
+      <span
+        ><a class="font-weight-bold" href="/accounts/register/"
+          >click here.</a
+        ></span
+      >
+    </p>
+  </form>
+  <input type="hidden" name="next" value="{{next}}" />
+</div>
+
+{% endblock content %}
