@@ -8,7 +8,7 @@ body {
   grid-template-rows: 0.1fr 0.1fr 0.7fr;
   grid-template-areas:
     "sidebar search"
-    "sidebar heading"
+    "sidebar content"
     "sidebar content";
 
   width: 100%;
@@ -94,24 +94,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .profile-info-container {
   width: 100%;
-  height: 200px;
-  margin: 0 20px;
+  height: max-content;
   padding: 30px;
+  margin: 0 0;
 
   display: grid;
-  grid-template-columns: 0.2fr 0.3fr 0.5fr;
-  grid-template-rows: 0.3fr;
+  grid-template-columns: 0.3fr 0.35fr 0.4fr;
+  grid-template-rows: 0.2fr;
   grid-template-areas: "avatar details bio";
 }
 
 .profile-grid-container {
   width: 100%;
   height: 100%;
+  margin-top: 0;
 
   display: flex;
   flex-flow: row wrap;

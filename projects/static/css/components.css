@@ -164,10 +164,9 @@
 }
 
 .feed-item-image {
-  height: 50%;
+  height: 300px !important;
   width: 100%;
   object-fit: cover;
-  object-position: top;
 }
 
 .feed-item-details {
