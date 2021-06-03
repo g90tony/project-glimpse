@@ -6,7 +6,7 @@
   <div class="profile-info-container">
     <div class="profile-avatar-container">
       <img
-        src="{{profile.profile_picture}}"
+        src="{{profile.display_picture.url}}"
         alt=""
         class="avatar-image profile-avatar"
       />
@@ -19,11 +19,11 @@
         {{profile.user.email}}
       </p>
       <p class="body-sm-black text-primary text-start profile-details-item">
-        {{posts | length}}
+        Posts {{posts | length}}
       </p>
     </div>
     <div class="profile-bio-container">
-      <p class="text-end body-sm-regular primary-text">{{profile.bio}}</p>
+      <p class="text-end body-sm-regular primary-text">{{profile.user_bio}}</p>
     </div>
   </div>
 
@@ -32,12 +32,15 @@
     <!-- start of for loop -->
     {% for post in posts %}
     <a href="/projects/view/{{post.id}}" class="link-plain border-link"
-      ><img src="{{post.image.url}}" alt="" class="post-image profile-post"
+      ><img
+        src="{{post.landing_page.url}}"
+        alt=""
+        class="post-image profile-post"
     /></a>
     {% endfor %}
     <!-- start of else block -->
     {% else %}
-    <p class="text-center subheading-bold text-primary">
+    <p class="text-center body-bold text-primary">
       You have no projects posted
     </p>
 
