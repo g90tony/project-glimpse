@@ -6,22 +6,26 @@
 <!-- start of for loop -->
 {% for project in projects %}
 <div class="feed-item">
-  <img src="{{project.image.url}}" alt="" class="post-image feed-item-image" />
+  <img
+    src="{{project.landing_page.url}}"
+    alt=""
+    class="post-image feed-item-image"
+  />
   <div class="feed-item-details">
     <div class="feed-user-details">
       <img
-        src="{{project.profile.profile_picture}}"
+        src="{{project.profile.display_picture.url}}"
         alt=""
         class="feed-avatar avatar-image"
       />
 
       <div class="feed-details">
         <p class="body-sm-black text-start text-primary feed-username">
-          {{project.profile.username}}
+          {{project.profile.user.username}}%
         </p>
         <p class="body-sm-regular text-start text-primary feed-rating">
+          {% if project.rating %} {{project.rating}} {% else %} 0% {% endif %}
           <i class="fab fa-gripfire text-red body-regular"></i>
-          {{project.rating}}
         </p>
       </div>
     </div>
