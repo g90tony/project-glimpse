@@ -5,7 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
     <title>Project Glimpse Prototype</title>
+    {% endif %}
 
     <link
       rel="stylesheet"
@@ -30,18 +34,36 @@
           <i class="fas fa-times title-regular text-primary text-end"></i>
         </button>
         <div class="sidebar-links">
-          <a href="index.html" class="sidebar-item link-plain">
-            <img src="images/sidebar/feed.png" alt="" class="icon-image" />
+          <a href="{% url 'projects:Home' %}" class="sidebar-item link-plain">
+            <img
+              src="{% static 'images/sidebar/feed.png' %}"
+              alt=""
+              class="icon-image"
+            />
             <p class="body-lg-black text-primary text-start">Feed</p></a
           >
 
-          <a href="profile.html" class="sidebar-item link-plain">
-            <img src="images/sidebar/profile.png" alt="" class="icon-image" />
+          <a
+            href="{% url 'projects:Profile' %}"
+            class="sidebar-item link-plain"
+          >
+            <img
+              src="{% static 'images/sidebar/profile.png' %}"
+              alt=""
+              class="icon-image"
+            />
             <p class="body-lg-black text-primary text-start">Profile</p></a
           >
 
-          <a href="create.html" class="sidebar-item link-plain">
-            <img src="images/sidebar/add.png" alt="" class="icon-image" />
+          <a
+            href="{% url 'projects:New Project' %}"
+            class="sidebar-item link-plain"
+          >
+            <img
+              src="{% static 'images/sidebar/add.png' %}"
+              alt=""
+              class="icon-image"
+            />
             <p class="body-lg-black text-primary text-start">Add Post</p></a
           >
         </div>
@@ -79,10 +101,6 @@
         </form>
       </div>
 
-      <div class="heading-container">
-        <p class="body-xl-black text-primary text-start">Feed</p>
-      </div>
-
       <div class="content-container">
         {% block content %}
         <!-- content will appear here -->
@@ -92,5 +110,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/sidebar.js' %}"></script>
+    <script src="{% static 'js/form_submits.js' %}"></script>
   </body>
 </html>
