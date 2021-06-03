@@ -7,11 +7,11 @@ class Profile(models.Model):
     display_picture = CloudinaryField('image', default=None)
     user_bio = models.TextField()
     user_mail = models.EmailField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
 
 class Project(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, default=None)
     title = models.CharField(max_length=225)
     landing_page = CloudinaryField('image', default=None)
     detailed_description = models.TextField()
