@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+<!-- start of content block -->
+{% block content %}
+<div class="full-form-container background-light">
+  <form id="create_profile" method="POST" class="full-form">
+    {% csrf_token %}
+    <p class="body-lg-bold text-start text-primary">
+      Create your profile to continue
+    </p>
+
+    <div class="full-form-group">
+      <label class="secondary-text text-start body-sm-black" for=""
+        >Upload Display Picture</label
+      >
+      <input
+        type="file"
+        accept="image/*"
+        id="display_picture"
+        class="border-primary body-sm-regular background-white full-form-input"
+      />
+    </div>
+
+    <div class="full-form-group">
+      <label class="secondary-text text-start body-black" for="">Bio</label>
+      <textarea
+        type="text"
+        id="user_bio"
+        class="border-primary body-sm-regular background-white full-form-input"
+        placeholder="Enter detailed project description..."
+        row="7"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      class="
+        full-form-button
+        border-primary
+        background-primary
+        text-white
+        body-sm-bold
+        button
+      "
+    >
+      Post
+    </button>
+  </form>
+</div>
+{% endblock content %}
+<!-- start of scripts block  -->
+{% block scripts %} {{ block.super}}
+<script src="{% static 'js/new_profile_submit.js"></script>
+<!-- end of scripts block -->
+{% endblock scripts %}
