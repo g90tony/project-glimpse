@@ -5,9 +5,11 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from decouple import config
+import requests
 
 from .models import Profile, Project
-from .forms import NewProfile, NewProject
+from django.contrib.auth.models import User
 from .serializer import ProjectSerializer, ProjectsSerializer, ProfileSerialier
 from .permissions import IsAdminOrReadOnly 
 # Create your views here.
@@ -17,7 +19,7 @@ class ListProjects(APIView):
     
     def get(self, request, format=None):
         all_projects = Project.objects.all()
-        serializers = ProjectsSerializer(all_projects, many=True)
+        serializers = ProjectSerializer(all_projects, context={"request": request}, many=True)
         
         return Response(serializers.data)
     
@@ -43,7 +45,7 @@ class SingleProject(APIView):
         
     def get(self, project_id, request,format=None):
         project = self.project_getter(project_id)
-        serializers = ProjectSerializer(project)
+        serializers = ProjectSerializer(project, context={"request": request})
         
         return Response(serializers.data)
     
@@ -68,17 +70,19 @@ class SingleProject(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
         
 class SingleProfile(APIView):
-    def profile_getter(self, id):
+    def profile_getter(self, pk):
         try:
-            return Profile.objects.filter(user=id).first()
+            user = User.objects.get(id=pk)
+            return Profile.objects.get(user=user)
         
         except Profile.DoesNotExist:
                 return Http404
             
         
-    def get(self, request, profile_id, format=None): 
-        profile = self.profile_getter(profile_id)
-        serializers = ProfileSerialier(profile)
+    def get(self, request, user_id, format=None): 
+        
+        profile = self.profile_getter(user_id)
+        serializers = ProfileSerialier(profile, context={"request": request})
         
         return Response(serializers.data)
         
@@ -114,15 +118,25 @@ class SingleProfile(APIView):
         
         return Response(status= status.HTTP_204_NO_CONTENT)
     
+    
+BASE_URL = config('BASE_URI') 
+    
 @login_required(login_url='accounts/login/')  
 def index(request):
     
-    current_user = Profile.objects.filter(user = request.user).first()
+    API_PROFILE_REQUEST = BASE_URL + f'/profile/{request.user.id}'
+    response = requests.get(API_PROFILE_REQUEST)
+    current_user = response.json()
     
     if current_user is None:
         return redirect('/profile/create')
     
-    all_projects = Project.objects.all()
+    API_PROJECT_REQUEST = BASE_URL+ '/project'
+
+     
+    projects_response = requests.get(API_PROJECT_REQUEST)
+    all_projects = projects_response.json()
+
     title = 'Profile Glimpse: Home'
     
     return render(request, 'index.html', {'title': title, 'projects': all_projects})
@@ -183,23 +197,5 @@ def upload(request):
 @login_required(login_url='accounts/login/')
 def new_profile(request):
     title = 'Project Glimpse: Create Profile'
-    
-    if request.method == 'POST':
-        form = NewProfile(request.POST, request.FILES)
         
-        if form.is_valid():
-            new_profile = form.save(commit = False)
-            new_profile.user = request.user
-            
-            new_profile.save()
-            
-            return redirect('/')
-        
-    else:
-        form = NewProject()
-        
-    return render(request, 'profile_init.html', {"title": title, 'form': form})
-        
-        
-            
-            
+    return render(request, 'profile_init.html', {"title": title})
