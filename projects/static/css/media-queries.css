@@ -5,7 +5,7 @@
     grid-template-rows: 0.1fr 0.1fr 0.8fr;
     grid-template-areas:
       "sidebar search"
-      "sidebar heading"
+      "sidebar content"
       "sidebar content";
 
     width: 100%;
@@ -53,10 +53,10 @@
   .root-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.1fr 0.8fr;
+    grid-template-rows: 0.2fr 0.1fr 0.75fr;
     grid-template-areas:
       "search"
-      "heading"
+      "content"
       "content";
 
     width: 100%;
