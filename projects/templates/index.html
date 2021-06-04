@@ -7,14 +7,14 @@
 {% for project in projects %}
 <div class="feed-item">
   <img
-    src="{{project.landing_page.url}}"
+    src="{{project.landing_page}}"
     alt=""
     class="post-image feed-item-image"
   />
   <div class="feed-item-details">
     <div class="feed-user-details">
       <img
-        src="{{project.profile.display_picture.url}}"
+        src="{{project.profile.display_picture}}"
         alt=""
         class="feed-avatar avatar-image"
       />
