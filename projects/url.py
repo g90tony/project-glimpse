@@ -8,9 +8,9 @@ app_name = 'projects'
 
 urlpatterns = [
     path('api/project/', views.ListProjects.as_view()),
-    path('api/project/(?P<project_id>[0-9])', views.SingleProject.as_view()),
+    path('api/project/<int:project_id>', views.SingleProject.as_view()),
     
-    path('api/profile/(?P<project_id>[0-9])', views.SingleProfile.as_view()),
+    path('api/profile/<int:user_id>', views.SingleProfile.as_view()),
   
     path('', views.index, name='Home'),
     path('profile/', views.profile, name='Profile'),  
