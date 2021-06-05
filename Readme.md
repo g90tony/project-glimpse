@@ -2,64 +2,34 @@
 
 Project Glimpse is a social media app aimed at web developers and designers. It is the place where creators can share and comment the other users projects.
 
-## Site
+It was built with Python's Django Framework and
 
-### Landing Page
+## Home Mockup
 
-This is the first page the user will see and it will have information about the application as well as buttons to login and registration pages.
+![App Screenshot](https://am3pap006files.storage.live.com/y4p_sf6f6P4DcJ7Ol_uK_twEkI5tOTbwNjJUL3fNe4R0Vj368of5w3LpRA_EuurD_-83YRgQpM3RzSR7tRhtLnrlN97uWAR0pATtrUSZaNoskmcnu5k5_v5Cwb0vQjrKsiN3dSfCpZXS2rh28WAoUaDzYjZOQsVCjiSdG67b_ST2pYATfm4YJsMiwifNN0GrnapzdPg-fQYg5v4qMT35uKWi672nGep3wjmoKuGhTD2a3M/Landing.png?psid=1&width=1108&height=623)
 
-### Feed Page
+![App Screenshot](https://am3pap006files.storage.live.com/y4pSfnukCtqsgrmpn2ZFZfV5O17LgkpB5XWEZG9kDPuMLKlmG4R5VyKoVVz3EiamY0SEdW_d9J_aO5YfnZZGPhooxpPlij4axdPz6xvfx6P73I5uWCHb2wSDaW9O2Qv4vf_8Mx8kNfQsYdCXP3ey3ljWwXHr_hdY22_BQv7Kqr3JyOtoqayMIFk2IUYkiPW9lrh3-buG_JVs-eW-9D3VnrP1pRLoNvNI_okxV_c7tBufsY/Profile.png?psid=1&width=1108&height=623)
 
-This page will primary focus on showing the user a list feed with the most recent projects posted.
+![App Screenshot](https://am3pap006files.storage.live.com/y4pHjApC32elaV_fSPj9We_UeXmWxflNij7dtTkFO38I5sIZTTcR-zbgXJzWQQ0dSJK_rAOYLwTcpzlBxlRSLE3Weo3f0SaS4I31-O4zWkZ8UsR00wj4jdgpnXMcDc_iBhT8Evp-LGnNh-Yr0jwraekhzI-GJzC1-iqyAgao_f-SeUza4pxwisdFMcNT7MPRISBEAh-PoY-4Rf53FT5SlzQW6nYzkEiRHkv1oKQKQ_d0F8/View.png?psid=1&width=1108&height=623)
 
-### Post Project Page
+## Tech Stack
 
-Here the user can create post of a projects he/she has been working on and requires a design image, project description, live link
+**Client:** Django, Jinga 2, HTML & CSS
 
-### View Project Post Page
+**Server:** Django REST Framework
 
-A user can view a single post and it's details in this page as well as rate the project and leaving and reading comments
+## Demo
 
-### Profile Page
+Insert gif or link to demo
 
-Since the user needs an account to use the app, the profile page will help the user see his/her posts and account information
+## Authors
 
-### Search Projects
+- [@Caleb Mbugua](https://www.github.com/g90tony)
 
-This will display projects that match a given search query as well as the number of posts found matching the given criteria.
+## Support
 
-## Mobile support
+For support, email calebmbugua@mail.com or join our Slack channel.
 
-Story Book is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
+## License
 
-## [Usage](https://github.com/g90tony/project-glimpse)
-
-### Development
-
-Want to contribute? Great!
-
-To fix a bug or enhance an existing module, follow these steps:
-
-- Fork the repo
-- Create a new branch (`git checkout -b improve-feature`)
-- Make the appropriate changes in the files
-- Add changes to reflect the changes made
-- Commit your changes (`git commit -am 'Improve feature'`)
-- Push to the branch (`git push origin improve-feature`)
-- Create a Pull Request
-
-### Bug / Feature Request
-
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/g90tony/project-glimpse/issues/new) by including your search query and the expected result.
-
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/g90tony/project-glimpse/issues/new). Please include sample queries and their corresponding results.
-
-## Built with
-
-- [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
-- [Django Framework](https://docs.djangoproject.com/en/3.2/) - Free , Rich Gallery , Customizable and Cross-browser compatible.
-- [Bootstrap](http://getbootstrap.com/) - Extensive list of components and Bundled Javascript plugins.
-
-## [License](https://github.com/g9tony/story-book/blob/master/LICENSE.md)
-
-MIT © [Caleb Mbugua ](https://github.com/g90tony)
+[MIT](https://choosealicense.com/licenses/mit/)
